@@ -1,0 +1,14 @@
+{
+  "sample_rows": 10000,
+  "date_min": "2024-01-01",
+  "date_max": "2024-12-31",
+  "eligible_completed_flights": 9836,
+  "on_time_rate": 0.7845668971126474,
+  "delay_15_rate": 0.2154331028873526,
+  "severe_delay_60_rate": 0.07808052053680357,
+  "cancellation_rate": 0.0122,
+  "diversion_rate": 0.0042,
+  "avg_arrival_delay_minutes": 7.545038633590891,
+  "median_arrival_delay_minutes": -6.0,
+  "avg_departure_delay_minutes": 13.002428166734116
+}

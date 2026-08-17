@@ -4,9 +4,9 @@ Tableau business-intelligence portfolio project analyzing U.S. domestic flight r
 
 ## Current Data Scope
 
-The repository currently uses the **real 10,000-row sample** supplied with the Kaggle dataset. It covers **2024-01-01 through 2024-12-31** and preserves the same 35-column schema as the 7M+ row full dataset.
+The analysis is computed from the **real 10,000-row sample** supplied with the Kaggle dataset. It covers **2024-01-01 through 2024-12-31** and preserves the same 35-column schema as the 7M+ row full dataset. To keep Git history lightweight, the row-level sample is **not versioned**; the repository stores the source data dictionary, reproducible preprocessing code, and aggregated outputs computed from the real 10,000-row sample.
 
-> Sample-level findings are explicitly labeled as sample results and should not be interpreted as exact population estimates for every U.S. domestic flight in 2024.
+> Sample-level findings below are explicitly labeled as sample results and should not be interpreted as exact population estimates for every U.S. domestic flight in 2024.
 
 ## Sample Executive Results
 
@@ -55,11 +55,44 @@ The repository currently uses the **real 10,000-row sample** supplied with the K
 - Distance-band analysis
 - High-risk route drill-down
 
+## Data Engineering
+
+`scripts/prepare_data.py` validates the 35 source fields and creates Tableau-friendly features including `route`, `day_name`, scheduled-departure fields, distance bands, operational flags, and delay-cause fields.
+
+## Repository Structure
+
+```text
+airline-operations-tableau/
+├── README.md
+├── data/
+│   ├── sample/
+│   │   ├── README.md
+│   │   └── flight_data_2024_data_dictionary.csv
+│   └── processed/
+│       ├── kpi_summary.csv
+│       ├── airline_summary.csv
+│       ├── monthly_summary.csv
+│       ├── delay_cause_summary.csv
+│       └── summary.json
+├── docs/
+├── reports/
+├── scripts/
+└── tableau/
+```
+
 ## Data Source & License
 
 - **Primary source:** U.S. Department of Transportation — Bureau of Transportation Statistics (BTS), Reporting Carrier On-Time Performance.
 - **Portfolio dataset:** Kaggle — *Flight Delay Dataset — 2024* by Hrishit Patil, a cleaned merge of monthly BTS TranStats files.
 - **Dataset license:** CC0 / Public Domain as stated on the Kaggle dataset page.
+
+## Reproduce the Tableau Dataset
+
+```bash
+python scripts/prepare_data.py <path-to-flight-csv>
+```
+
+The script writes a Tableau-ready output to `data/processed/`.
 
 ## Status
 

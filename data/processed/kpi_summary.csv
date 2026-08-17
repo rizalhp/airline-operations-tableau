@@ -1,0 +1,9 @@
+kpi,value,unit
+Sample Flights,10000,count
+On-Time Arrival Rate,0.7845668971126474,rate
+Delay Rate (15+ min),0.2154331028873526,rate
+Severe Delay Rate (60+ min),0.07808052053680357,rate
+Cancellation Rate,0.0122,rate
+Diversion Rate,0.0042,rate
+Average Arrival Delay,7.545038633590891,minutes
+Median Arrival Delay,-6.0,minutes

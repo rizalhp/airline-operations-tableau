@@ -29,7 +29,7 @@ The analysis is computed from the **real 10,000-row sample** supplied with the K
 4. Which reported delay causes contributed the most delay minutes?
 5. How can an operations team prioritize schedule, turnaround, and disruption-management interventions?
 
-## Planned Tableau Story
+## Tableau Story
 
 ### Dashboard 1 — Executive Operations Overview
 - Flight volume
@@ -59,6 +59,14 @@ The analysis is computed from the **real 10,000-row sample** supplied with the K
 
 `scripts/prepare_data.py` validates the 35 source fields and creates Tableau-friendly features including `route`, `day_name`, scheduled-departure fields, distance bands, operational flags, and delay-cause fields.
 
+## Documentation
+
+- [`docs/methodology.md`](docs/methodology.md) — analytical scope, sampling notes, and preprocessing methodology
+- [`docs/data_dictionary.md`](docs/data_dictionary.md) — source and engineered field definitions
+- [`docs/kpi_definitions.md`](docs/kpi_definitions.md) — business KPI definitions
+- [`docs/dashboard_blueprint.md`](docs/dashboard_blueprint.md) — intended Tableau dashboard structure
+- [`docs/tableau_calculated_fields.md`](docs/tableau_calculated_fields.md) — reusable Tableau formulas, formatting rules, route-volume guardrails, and dashboard QA checks
+
 ## Repository Structure
 
 ```text
@@ -75,6 +83,11 @@ airline-operations-tableau/
 │       ├── delay_cause_summary.csv
 │       └── summary.json
 ├── docs/
+│   ├── dashboard_blueprint.md
+│   ├── data_dictionary.md
+│   ├── kpi_definitions.md
+│   ├── methodology.md
+│   └── tableau_calculated_fields.md
 ├── reports/
 ├── scripts/
 └── tableau/
@@ -96,4 +109,4 @@ The script writes a Tableau-ready output to `data/processed/`.
 
 ## Status
 
-**Data audit and preprocessing complete.** Next milestone: build and publish the three interactive Tableau dashboards, then add the Tableau Public URL and screenshots to this repository.
+**Data audit and preprocessing complete. Dashboard 1 and Dashboard 2 are complete; Dashboard 3 (Airport & Route Intelligence) is in progress.** Next milestone: finish Dashboard 3, publish the Tableau story, and add the Tableau Public URL plus dashboard screenshots to this repository.

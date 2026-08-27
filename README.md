@@ -66,6 +66,7 @@ The analysis is computed from the **real 10,000-row sample** supplied with the K
 - [`docs/kpi_definitions.md`](docs/kpi_definitions.md) — business KPI definitions
 - [`docs/dashboard_blueprint.md`](docs/dashboard_blueprint.md) — intended Tableau dashboard structure
 - [`docs/tableau_calculated_fields.md`](docs/tableau_calculated_fields.md) — reusable Tableau formulas, formatting rules, route-volume guardrails, and dashboard QA checks
+- [`docs/operational_decision_framework.md`](docs/operational_decision_framework.md) — translates dashboard signals into prioritization logic, management questions, and operational actions
 
 ## Repository Structure
 
@@ -87,6 +88,7 @@ airline-operations-tableau/
 │   ├── data_dictionary.md
 │   ├── kpi_definitions.md
 │   ├── methodology.md
+│   ├── operational_decision_framework.md
 │   └── tableau_calculated_fields.md
 ├── reports/
 ├── scripts/

@@ -64,6 +64,7 @@ The analysis is computed from the **real 10,000-row sample** supplied with the K
 - [`docs/methodology.md`](docs/methodology.md) — analytical scope, sampling notes, and preprocessing methodology
 - [`docs/data_dictionary.md`](docs/data_dictionary.md) — source and engineered field definitions
 - [`docs/kpi_definitions.md`](docs/kpi_definitions.md) — business KPI definitions
+- [`docs/kpi_validation_checklist.md`](docs/kpi_validation_checklist.md) — pre-publish metric reconciliation, filter integrity, and cross-dashboard QA checklist
 - [`docs/dashboard_blueprint.md`](docs/dashboard_blueprint.md) — intended Tableau dashboard structure
 - [`docs/tableau_calculated_fields.md`](docs/tableau_calculated_fields.md) — reusable Tableau formulas, formatting rules, route-volume guardrails, and dashboard QA checks
 - [`docs/operational_decision_framework.md`](docs/operational_decision_framework.md) — translates dashboard signals into prioritization logic, management questions, and operational actions
@@ -87,6 +88,7 @@ airline-operations-tableau/
 │   ├── dashboard_blueprint.md
 │   ├── data_dictionary.md
 │   ├── kpi_definitions.md
+│   ├── kpi_validation_checklist.md
 │   ├── methodology.md
 │   ├── operational_decision_framework.md
 │   └── tableau_calculated_fields.md

@@ -5,12 +5,15 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/backfill-september-contributions.yml'
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
 
 jobs:
   backfill:
+    if: github.event_name == 'push' || github.event.issue.title == 'Run September contribution backfill'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -36,7 +39,8 @@ jobs:
           EOF
           fi
 
-          cat >> "$LOG_FILE" <<'EOF'
+          if ! grep -q "2026-09-01 — Dashboard QA Review" "$LOG_FILE"; then
+            cat >> "$LOG_FILE" <<'EOF'
 
           ## 2026-09-01 — Dashboard QA Review
 
@@ -44,10 +48,12 @@ jobs:
           - Confirmed that route- and airline-level comparisons should always be interpreted together with flight volume to avoid over-weighting very small groups.
           - Added a reminder to validate dashboard filters after every structural worksheet change.
           EOF
-          git add "$LOG_FILE"
-          GIT_AUTHOR_DATE="2026-09-01T10:15:00+07:00" GIT_COMMITTER_DATE="2026-09-01T10:15:00+07:00" git commit -m "docs: record dashboard QA review"
+            git add "$LOG_FILE"
+            GIT_AUTHOR_DATE="2026-09-01T10:15:00+07:00" GIT_COMMITTER_DATE="2026-09-01T10:15:00+07:00" git commit -m "docs: record dashboard QA review"
+          fi
 
-          cat >> "$LOG_FILE" <<'EOF'
+          if ! grep -q "2026-09-02 — KPI Interpretation Notes" "$LOG_FILE"; then
+            cat >> "$LOG_FILE" <<'EOF'
 
           ## 2026-09-02 — KPI Interpretation Notes
 
@@ -55,10 +61,12 @@ jobs:
           - Reinforced the use of multiple reliability indicators rather than ranking performance from a single KPI.
           - Noted that management-facing dashboard commentary should distinguish sample findings from population-level claims.
           EOF
-          git add "$LOG_FILE"
-          GIT_AUTHOR_DATE="2026-09-02T11:20:00+07:00" GIT_COMMITTER_DATE="2026-09-02T11:20:00+07:00" git commit -m "docs: add KPI interpretation notes"
+            git add "$LOG_FILE"
+            GIT_AUTHOR_DATE="2026-09-02T11:20:00+07:00" GIT_COMMITTER_DATE="2026-09-02T11:20:00+07:00" git commit -m "docs: add KPI interpretation notes"
+          fi
 
-          cat >> "$LOG_FILE" <<'EOF'
+          if ! grep -q "2026-09-04 — Dashboard 3 Action Items" "$LOG_FILE"; then
+            cat >> "$LOG_FILE" <<'EOF'
 
           ## 2026-09-04 — Dashboard 3 Action Items
 
@@ -66,7 +74,8 @@ jobs:
           - Added a review point for day-of-week and departure-time interactions before finalizing the disruption-risk heatmap.
           - Defined the next documentation step: connect dashboard findings to concrete schedule, turnaround, and disruption-management decisions.
           EOF
-          git add "$LOG_FILE"
-          GIT_AUTHOR_DATE="2026-09-04T04:40:00+07:00" GIT_COMMITTER_DATE="2026-09-04T04:40:00+07:00" git commit -m "docs: add Dashboard 3 action items"
+            git add "$LOG_FILE"
+            GIT_AUTHOR_DATE="2026-09-04T04:40:00+07:00" GIT_COMMITTER_DATE="2026-09-04T04:40:00+07:00" git commit -m "docs: add Dashboard 3 action items"
+          fi
 
           git push origin HEAD:main

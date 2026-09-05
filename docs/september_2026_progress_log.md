@@ -19,3 +19,9 @@ Practical notes documenting QA, interpretation, and dashboard refinement work fo
 - Prioritized high-volume, high-delay routes for the Airport & Route Intelligence dashboard because they combine operational impact with actionable scale.
 - Added a review point for day-of-week and departure-time interactions before finalizing the disruption-risk heatmap.
 - Defined the next documentation step: connect dashboard findings to concrete schedule, turnaround, and disruption-management decisions.
+
+## 2026-09-05 — Dashboard Refinement Notes
+
+- Reviewed the Airport & Route Intelligence story flow so the dashboard moves from broad airport performance into route-level operational risk.
+- Added a guardrail to pair disruption rates with flight volume before highlighting high-risk routes, reducing the chance of overemphasizing low-volume outliers.
+- Defined the next QA step: verify that route, airline, month, and departure-time filters produce consistent KPI behavior across all Dashboard 3 views.
